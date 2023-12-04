@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{  tournament.name  }}</title>
+    <style>
+        .match {
+            border: 1px solid black;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        .match .team {font-weight: bold}
+    </style>
+</head>
+<body>
+    <div class="matches">
+        {% for match in matches %}
+        <div class="match">
+            <div class="team">
+                {{ match.first_team }} - {{ match.second_team }}
+            </div>
+            <div class="result">
+                {% if match.goals_first_team is not None and match.goals_second_team is not None %}
+                {{ match.goals_first_team }} - {{ match.goals_second_team }}
+                {% else %}
+                -- - --
+                {% endif %}
+            </div>
+            <div class="coefficient">
+                Коэффициенты: Победа {{ match.first_team }} - {{ match.coefficient_win_first }},
+                Победа {{ match.second_team }} - {{ match.coefficient_win_second }},
+                Ничья - {{ match.coefficient_loss }}
+            </div>
+            <div class="time">
+                Время: {{ match.time }}
+            </div>
+        </div>
+        {% endfor %}
+</body>
+</html>

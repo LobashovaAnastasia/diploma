@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{  tournament  }}</title>
+    <style>
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {background-color: #4CAF50}
+        nav {
+            float: left;
+            width: 20%!;(MISSING)
+            background: #f1f1f1;
+            padding: 1em;
+        }
+        nav a {
+            display: block;
+            padding: 2em;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+    <ul>
+        <li><a href="statistics/{{  tournament.id  }}">Бомбардиры</a></li>
+        <li><a href="matches/{{  tournament.id  }}">Матчи</a></li>
+        <li><a href="news/{{  tournament.id  }}">Новости</a></li>
+    </ul>
+
+</nav>
+    <h1>{{  tournament.name   }}</h1>
+    <h2>Турнирная таблица</h2>
+    <table>
+        <tr>
+            <th>Логотип</th>
+            <th>Команда</th>
+            <th>Победы</th>
+            <th>Поражения</th>
+            <th>Ничьи</th>
+            <th>Забито мячей</th>
+            <th>Пропущено мячей</th>
+            <th>Очки</th>
+        </tr>
+          {% for team in teams %}
+            <tr>
+                <td><img src="{{  team.team_logo.url  }}"/></td>
+                <td><a href="team_info/{{ team.id }}">{{  team.name  }}</a></td>
+                <td>{{  team.win  }}</td>
+                <td>{{  team.loss  }}</td>
+                <td>{{  team.draw  }}</td>
+                <td>{{  team.goals  }}</td>
+                <td>{{  team.conceded  }}</td>
+                <td>{{  team.points  }}</td>
+            </tr>
+          {% endfor %}
+    </table>
+
+</body>
+</html>
+
+

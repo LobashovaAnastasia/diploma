@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Новости</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<main>
+    <section>
+        <h2>Новости</h2>
+        {% for news in news_list %}
+          <div>
+              <h4><a href="news/{{ news.id }}">{{  news.title  }}</a></h4>
+              <p>Дата публикации: {{  news.date  }}</p>
+          </div>
+        {%  endfor  %}
+    </section>
+
+</main>
+</body>
+</html>

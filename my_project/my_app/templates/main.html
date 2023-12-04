@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            float: left;
+            width: 20%!;(MISSING)
+            background: #f1f1f1;
+            padding: 1em;
+        }
+
+        nav a {
+            display: block;
+            padding: 2em;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+        }
+
+        main {
+            float: left;
+            width: 80%!;(MISSING)
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ассоциация „Белорусская федерация футбола“</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="tournament/2">Высшая лига</a></li>
+        <li><a href="tournament/3">Первая лига</a></li>
+        <li><a href="tournament/4">Женская высшая лига</a></li>
+        <li><a href="tournament/5">Вторая лига</a></li>
+        <li><a href="national_team">Национальная сборная</a></li>
+    </ul>
+
+</nav>
+
+<main>
+    <section id="section1">
+        <h2><a href="news">Новости</a></h2>
+        {% for news in news_list %}
+          <div>
+              <h4><a href="news/{{ news.id }}">{{  news.title  }}</a></h4>
+              <p>Дата публикации: {{  news.date  }}</p>
+          </div>
+        {%  endfor  %}
+    </section>
+
+    <section id="section2">
+        <h2>Результаты</h2>
+        {% for match in list_of_matches %}
+          <div>
+              <h4><a href="matches/{{ match.id }}">
+                  {{  match.first_team  }} {{  match.goals_first_team  }}  -
+                  {{  match.goals_second_team  }} {{  match.second_team  }}
+              </a></h4>
+              <p>{{  match.time  }}</p>
+          </div>
+        {%  endfor  %}
+    </section>
+</main>
+</body>
+</html>

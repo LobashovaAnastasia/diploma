@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Национальная сборная</title>
+    <style>
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+        nav {
+            float: left;
+            width: 100%!
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Национальная сборная</h1>
+</header>
+
+<nav>
+    <h2>Матчи</h2>
+    <ul>
+      {%  for match in matches  %}
+        <p>
+            {{  match.first_team  }} {{  match.goals_first_team  }}  -
+            {{  match.goals_second_team  }} {{  match.second_team  }}
+        </p>
+      {%  endfor  %}
+    </ul>
+</nav>
+
+<main>
+    <section id="section1">
+        <h2><a href="news">Новости</a></h2>
+        {% for news in news_list %}
+          <div>
+              <h4><a href="news/{{ news.id }}">{{  news.title  }}</a></h4>
+              <p>Дата публикации: {{  news.date  }}</p>
+          </div>
+        {%  endfor  %}
+    </section>
+
+    <h2>История сборной</h2>
+</main>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Бомбардиры</title>
+    <style>
+      body {font-family: Arial, sans-serif}
+      table {border-collapse: collapse;
+        width: 100%}
+
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+    </style>
+</head>
+    <table>
+      <thead>
+        <tr>
+          <th>Имя</th>
+          <th>Фамилия</th>
+          <th>Команда</th>
+          <th>Количество голов</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for player in players %}
+        <tr>
+          <td>{{ player.first_name }}</td>
+          <td>{{ player.last_name }}</td>
+          <td>{{ player.team }}</td>
+          <td>{{ player.goals }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>

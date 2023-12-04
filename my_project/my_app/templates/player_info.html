@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ player.first_name }} {{ player.last_name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .player-info {
+            border: 1px solid #ccc;
+            padding: 10px;
+            max-width: 300px;
+            margin: auto;
+        }
+        .info-label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="player-info">
+    <p class="info-label">Имя:</p>
+    <p>{{ player.first_name }}</p>
+    <p class="info-label">Фамилия:</p>
+    <p>{{ player.last_name }}</p>
+    <p class="info-label">Возраст:</p>
+    <p>{{ player.age }}</p>
+    <p class="info-label">Национальность:</p>
+    <p>{{ player.nationality }}</p>
+    <p class="info-label">Команда:</p>
+    <p>{{ player.team.name }}</p>
+    <p class="info-label">Голы:</p>
+    <p>{{ player.goals }}</p>
+</div>
+</body>
+</html>
