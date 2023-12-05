@@ -7,14 +7,12 @@
     <style>
         th, td {
             border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
+            padding: 6px
         }
         th {background-color: #4CAF50}
         nav {
             float: left;
-            width: 20%!;(MISSING)
-            background: #f1f1f1;
+            width: 20%!;
             padding: 1em;
         }
         nav a {
@@ -22,20 +20,17 @@
             padding: 2em;
             text-decoration: none;
             color: #333;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #ddd
         }
-
     </style>
 </head>
 <body>
-
     <nav>
     <ul>
         <li><a href="statistics/{{  tournament.id  }}">Бомбардиры</a></li>
         <li><a href="matches/{{  tournament.id  }}">Матчи</a></li>
         <li><a href="news/{{  tournament.id  }}">Новости</a></li>
     </ul>
-
 </nav>
     <h1>{{  tournament.name   }}</h1>
     <h2>Турнирная таблица</h2>
@@ -63,7 +58,6 @@
             </tr>
           {% endfor %}
     </table>
-
 </body>
 </html>
 
