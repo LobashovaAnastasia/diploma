@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <title>Национальная сборная</title>
@@ -44,7 +45,7 @@
 
 <main>
     <section id="section1">
-        <h2><a href="news">Новости</a></h2>
+        <h2>Новости</h2>
         {% for news in news_list %}
           <div>
               <h4><a href="news/{{ news.id }}">{{  news.title  }}</a></h4>
@@ -53,7 +54,7 @@
         {%  endfor  %}
     </section>
 
-    <img src="../media/images/История_сборной.png" alt="История сборной">
+    <img src="{% static 'images/нац_сб1.jpeg' %}" height="330" alt="История сборной">
     <h2>История сборной</h2>
 
     <h3>Первый товарищеский матч - 28.10.1992</h3>

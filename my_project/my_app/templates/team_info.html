@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <title>{{  info.name  }}</title>
@@ -9,8 +10,10 @@
 </head>
 <body>
     <h1>{{  info.name  }}</h1>
+    <img src="{% static info.team_logo  %}" height="150">
     <div>
         <p>{{  info.info  }}</p>
+
         <h2>Игроки команды:</h2>
         <ul>
           {% for player in players %}

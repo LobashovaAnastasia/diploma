@@ -120,7 +120,7 @@ def list_of_matches(request: HttpRequest, tournament_id: int) -> HttpResponse:
 
 
 @query_debugger(logger)
-def get_player_by_id(request: HttpRequest, player_id: int):
+def get_player_by_id(request: HttpRequest, player_id: int) -> HttpResponse:
     if not (player_info := Player.objects.select_related().filter(id=player_id).first()):
         return HttpResponseNotFound(f"The player by id {player_id} does not exist")
     data = {'player': player_info}

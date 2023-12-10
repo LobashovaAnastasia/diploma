@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <title>Главная</title>
@@ -56,7 +57,7 @@
         <h2>Последние результаты</h2>
         {% for match in list_of_matches %}
           <div>
-              <h4><a href="matches/{{ match.id }}">
+              <h4>
                   {{  match.first_team  }} {{  match.goals_first_team  }}  -
                   {{  match.goals_second_team  }} {{  match.second_team  }}
               </a></h4>

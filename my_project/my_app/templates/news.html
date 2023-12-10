@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+{% load static %}
 <head>
   <meta charset="UTF-8">
   <title>{{  news.title  }}</title>
@@ -9,7 +10,7 @@
     <h2>{{ news.title }}</h2>
     <p>{{ news.text }}</p>
     <p>Дата публикации: {{ news.date }}</p>
-    <img src="{{ news.photo.url }}" alt="Фото публикации">
+    <img src="{% static news.photo %}" height="250">
     <p class="category">Категория: {{ news.category }}</p>
   </div>
 </body>
